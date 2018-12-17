@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-class App extends Component {
-  render() {
+import { triviaQuestions, categories } from './api.js';
+import TriviaList from './TriviaList.js'
+//import Controls Component Here
+
+export default class App extends Component {
+  constructor () {
+    super();
+    this.state = {
+      //set TriviaQuestions in state
+      //initialize selectedQuestionCount to value of 5 (to show 5 questions)
+    }
+    // this.resetLimit = this.resetLimit.bind(this);
+  }
+
+  //method `resetLimit`
+    // updates state for Question count to
+    // new limit passed in as parameter
+
+  render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <h1>Trivia!</h1>
+        {/*Add your TriviaList Component to pass down your questions*/}
+        {/*Add Controls Component, make sure pass down necessary props*/}
       </div>
-    );
+    )
   }
 }
-
-export default App;
