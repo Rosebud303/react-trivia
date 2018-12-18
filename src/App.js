@@ -1,29 +1,35 @@
 import React, { Component } from 'react';
 
 import { triviaQuestions, categories } from './api.js';
-import TriviaList from './TriviaList.js'
-//import Controls Component Here
+import TriviaList from './TriviaList.js';
+import Controls from './Controls.js'
 
 export default class App extends Component {
   constructor () {
     super();
+
     this.state = {
-      //set TriviaQuestions in state
-      //initialize selectedQuestionCount to value of 5 (to show 5 questions)
+      triviaQuestions: triviaQuestions,
+      selectedLimit: 5
     }
-    // this.resetLimit = this.resetLimit.bind(this);
+
+    this.setLimit = this.setLimit.bind(this);
   }
 
-  //method `resetLimit`
-    // updates state for Question count to
-    // new limit passed in as parameter
+  setLimit(limit) {
+    this.setState({
+      selectedLimit: limit
+    })
+  }
 
   render () {
     return (
       <div>
         <h1>Trivia!</h1>
-        {/*Add your TriviaList Component to pass down your questions*/}
-        {/*Add Controls Component, make sure pass down necessary props*/}
+        <Controls setLimit={this.setLimit} />
+        <TriviaList 
+          triviaQuestions={this.state.triviaQuestions}
+          questionCount={this.state.selectedLimit} />
       </div>
     )
   }
