@@ -1,3 +1,11 @@
+Clone down this repo, and cd into it.
+
+Run: `npm install`
+
+Start your server with `npm start`
+
+________________________________________________________________________________
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
