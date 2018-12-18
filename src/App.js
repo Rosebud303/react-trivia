@@ -9,21 +9,21 @@ export default class App extends Component {
     super();
     this.state = {
       //set TriviaQuestions in state
-      //initialize selectedQuestionCount to value of 5 (to show 5 questions)
+      //initialize selectedQuestionLimit to value of 5 (to show 5 questions)
     }
-    // this.resetLimit = this.resetLimit.bind(this);
+    // this.setLimit = this.setLimit.bind(this);
   }
 
-  //method `resetLimit`
-    // updates state for Question count to
+  //method `setLimit`
+    // updates state for Question Limit to
     // new limit passed in as parameter
 
   render () {
     return (
       <div>
         <h1>Trivia!</h1>
-        {/*Add your TriviaList Component to pass down your questions*/}
         {/*Add Controls Component, make sure pass down necessary props*/}
+        {/*Add your TriviaList Component to pass down your questions*/}
       </div>
     )
   }
