@@ -1,28 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-class App extends Component {
-  render() {
+import { triviaQuestions, categories } from './api.js';
+import TriviaList from './TriviaList.js';
+import Controls from './Controls.js'
+
+export default class App extends Component {
+  constructor () {
+    super();
+
+    this.state = {
+      triviaQuestions: triviaQuestions,
+      selectedLimit: 5
+    }
+
+    this.setLimit = this.setLimit.bind(this);
+  }
+
+  setLimit(limit) {
+    this.setState({
+      selectedLimit: limit
+    })
+  }
+
+  render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <h1>Trivia!</h1>
+        <Controls setLimit={this.setLimit} />
+        <TriviaList 
+          triviaQuestions={this.state.triviaQuestions}
+          questionCount={this.state.selectedLimit} />
       </div>
-    );
+    )
   }
 }
-
-export default App;
