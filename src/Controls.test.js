@@ -23,7 +23,7 @@ describe('Controls', () => {
   });
   
   it('should change questionCount state when updateCount is triggered', () => {
-    wrapper.instance().updateCount({ target: { value: 3 }});
+    wrapper.find('#question-count').simulate('change', { target: { value: 3 }});
     expect(wrapper.state('questionCount')).toEqual(3);
   });
 });
