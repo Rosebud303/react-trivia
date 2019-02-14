@@ -14,10 +14,8 @@ const mockQuestion = {
 };
 
 describe('Question', () => {
-
   let wrapper;
 
-  
   beforeEach(() => {
     wrapper = shallow(
       <Question
@@ -27,17 +25,13 @@ describe('Question', () => {
     );
   });
 
-
-  it('should have a default state', () => {
-    expect(wrapper.state()).toEqual({ showAnswer: false })
-  });
-
-
-
   it('should match the snapshot with all data passed in correctly', () => {
     expect(wrapper).toMatchSnapshot();
   });
- 
+
+  it('should have the proper default state', () => {
+    expect(wrapper.state()).toEqual({ showAnswer: false });
+  });
 
   it('should update the answer state when toggleAnswer is called', () => {
     expect(wrapper.state('showAnswer')).toEqual(false);

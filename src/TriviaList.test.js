@@ -7,19 +7,16 @@ const mockQuestions = [{category:"Entertainment: Video Games",type:"multiple",di
 
 
 describe('TriviaList', () => {
+  const wrapper = shallow(
+    <TriviaList
+      triviaQuestions={mockQuestions}
+      questionCount={2}
+    />
+  );
 
-  
-  it('should match the snapshot with all data passed in correctly', () => {
-    const wrapper = shallow(
-      <TriviaList
-        triviaQuestions={mockQuestions}
-        questionCount={2}
-      />
-    );
-
+  it('should match the snapshot with all data passed in', () => {
     expect(wrapper).toMatchSnapshot();
   });
-
 });
 
 

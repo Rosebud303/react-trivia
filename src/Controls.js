@@ -26,10 +26,11 @@ export default class Controls extends Component {
   render() {
     return(
       <form>
-        <input  type="number" 
-                id="question-count"
-                value={this.state.questionCount}
-                onChange={this.updateCount} />
+        <input
+          id="question-count"
+          type="number" 
+          value={this.state.questionCount}
+          onChange={this.updateCount} />
         <button className="set-filter" onClick={this.handleClick}>FILTER QUESTIONS</button>
       </form>
     )

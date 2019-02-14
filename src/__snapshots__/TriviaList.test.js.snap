@@ -1,5 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`TriviaList should match the snapshot with all data passed in 1`] = `
+<ul>
+  <Question
+    key="1"
+    question={
+      Object {
+        "category": "Entertainment: Video Games",
+        "correct_answer": "October 29, 2003",
+        "difficulty": "hard",
+        "id": 1,
+        "incorrect_answers": Array [
+          "December 1, 2003",
+          "November 14, 2002",
+          "July 18, 2004",
+        ],
+        "title": "When was the first Call of Duty title released?",
+        "type": "multiple",
+      }
+    }
+  />
+  <Question
+    key="2"
+    question={
+      Object {
+        "category": "Entertainment: Books",
+        "correct_answer": "7",
+        "difficulty": "medium",
+        "id": 2,
+        "incorrect_answers": Array [
+          "6",
+          "8",
+          "5",
+        ],
+        "title": "How many books are in the Chronicles of Narnia series?",
+        "type": "multiple",
+      }
+    }
+  />
+</ul>
+`;
+
 exports[`TriviaList should match the snapshot with all data passed in correctly 1`] = `
 <ul>
   <Question
