@@ -28,7 +28,7 @@ export default class Question extends Component {
       <li onClick={this.toggleAnswer}>
         <p>
           {icon}
-          {this.props.question.title}
+          {this.props.question.question}
           {
             this.state.showAnswer && 
             <span>{this.props.question.correct_answer}</span>
