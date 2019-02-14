@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import { triviaQuestions, categories } from './api.js';
 import TriviaList from './TriviaList.js';
 import Controls from './Controls.js'
 
@@ -8,24 +9,11 @@ export default class App extends Component {
     super();
 
     this.state = {
-      triviaQuestions: [],
+      triviaQuestions: triviaQuestions,
       selectedLimit: 5
     }
 
     this.setLimit = this.setLimit.bind(this);
-  }
-
-  componentDidMount() {
-    fetch('https://opentdb.com/api.php?amount=10')
-      .then(response => response.json())
-      .then(questions => {
-        this.setState({
-          triviaQuestions: questions.results
-        })
-      })
-      .catch(error => {
-        throw new Error(error);
-      });
   }
 
   setLimit(limit) {
