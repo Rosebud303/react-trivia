@@ -1,6 +1,6 @@
 import React from 'react';
 import Controls from './Controls';
-import { shallow, mount} from 'enzyme';
+import { shallow } from 'enzyme';
 
 const setLimitMock = jest.fn();
 
@@ -9,7 +9,7 @@ describe('Controls', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(
+    wrapper = shallow(
       <Controls
         setLimit={setLimitMock}
       />
@@ -17,7 +17,7 @@ describe('Controls', () => {
   });
 
   it('should invoke setLimit when button is clicked', () => {
-    wrapper.find('.set-filter').simulate('click');
+    wrapper.find('.set-filter').simulate('click', { preventDefault: () => {}});
     expect(setLimitMock).toBeCalled();
   });
 
